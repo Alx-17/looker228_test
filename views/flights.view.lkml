@@ -129,4 +129,5 @@ view: flights {
     type: count
     drill_fields: []
   }
+
 }
