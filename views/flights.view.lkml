@@ -80,6 +80,11 @@ view: flights {
     sql: ${TABLE}.destination ;;
   }
 
+  dimension: destination_long_text {
+    type: string
+    sql: ${TABLE}.destination*1000 ;;
+  }
+
   dimension: distance {
     type: number
     sql: ${TABLE}.distance ;;
@@ -128,6 +133,9 @@ view: flights {
   measure: count {
     type: count
     drill_fields: []
+    #html: {% assign display_value = count._value %}
+    #      {% assign html_visualization_value = 'Assign' %}
+    #      @{ftm_overview_html_alt};;
   }
 
 }
